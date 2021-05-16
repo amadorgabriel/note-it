@@ -7,8 +7,17 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html,
+  body{
+    font-family: 'Lato', sans-serif;
+    /* font-family: 'Gelasio', serif; */
+    background: ${props => props.theme.colors.background.primary};
+    color: ${props => props.theme.colors.tipografy.text.primary}
+  }
+
   a {
     text-decoration: none;
+    font-family: 'Lato', sans-serif;
   }
 
   @media (max-width: 1080px){
@@ -23,7 +32,4 @@ export default createGlobalStyle`
     }
   }
 
-  body {
-    background: ${props => props.theme.colors.background};
-  }
 `;
