@@ -32,4 +32,15 @@ export default createGlobalStyle`
     }
   }
 
+
+  /* ------- UTILS ------- */
+  
+  .flex{
+    display: flex
+  }
+
+  .hidden{
+    display: none;
+  }
+
 `;
