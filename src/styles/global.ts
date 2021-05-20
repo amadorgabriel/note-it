@@ -20,6 +20,11 @@ export default createGlobalStyle`
     font-family: 'Lato', sans-serif;
   }
 
+  ::selection { 
+    background: ${props => props.theme.colors.tipografy.title.primary}; 
+    color: #FFF;
+  }
+
   @media (max-width: 1080px){
     html{
       font-size: 93.75%; //15px
@@ -32,6 +37,31 @@ export default createGlobalStyle`
     }
   }
 
+  .main-content{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .on-dev{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 3px solid ${props => props.theme.colors.tipografy.text.primary};
+    border-style: dashed;
+    border-radius: 4px;
+
+    padding: 2rem 3rem;
+
+    p{
+      color: #646464;
+     font-size: 1.25rem;
+     font-weight: bold;
+    }
+  }
 
   /* ------- UTILS ------- */
   

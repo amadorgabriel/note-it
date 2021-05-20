@@ -1,24 +1,84 @@
 import styled from "styled-components";
 
-export const ScrollabeCalendar = styled.article`
+export const ScrollabeCalendar: any = styled.article`
   background: ${props => props.theme.colors.background.secondary};
 
-  padding: 0rem 4rem;
-  width: 26.5rem;
-  height: 100vh;
+  width: 34.5rem;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 
+  .pointer-container {
+    width: 85px;
+    height: 100%;
+  }
+
+  .pointer {
+    content: "";
+    width: 85px;
+    height: 2px;
+    padding-top: 2px;
+    margin-top: calc((100vh / 29) * 4);
+
+    display: block;    
+    background-color: #AC3936;
+    background-color: ${({theme}) => theme.colors.primary};
+    opacity: 0.4;
+  }
+
+  .pointer:first-child {
+    margin-top: calc((100vh / 29) * 1.8);
+  }
+
+  .pointer::before {
+    content: "";
+    width: 30px;
+    height: 2px;
+    margin-top: calc(100vh / -29); // -13px
+
+    display: block;    
+    background-color: ${({theme}) => theme.colors.primary};
+  }
+
+  .pointer span {
+    content: "";
+    width: 30px;
+    height: 2px;
+    margin-top: calc(190vh / 29); // 20px
+
+    display: block;    
+    background-color: ${({theme}) => theme.colors.primary};
+  }
+
+  .pointer::after {
+    content: "";
+    width: 30px;
+    height: 2px;
+    margin-top: calc(100vh / 29); // 10px
+
+    display: block;    
+    background-color: ${({theme}) => theme.colors.primary};
+  }
+
+  .principal{
+    background-color: #AC3936;
+    opacity: 1;
+  }
+
+  .principal::before, .principal span, .principal::after {
+    opacity: 0.4;
+  }
+
+`;
+
+ScrollabeCalendar.DayList = styled.ul`
   overflow-y: scroll;
+  height: 100vh;
+  padding: 0 3rem 0 2rem;
 
   &::-webkit-scrollbar {
     display: none;
-  }
-
-  ul {
   }
 
   li {
@@ -31,29 +91,29 @@ export const ScrollabeCalendar = styled.article`
     font-weight: bold;
 
     color: ${({ theme }) => theme.colors.tipografy.title.primary};
-    transition: 0.6s ease;
+    transition: 0.2s ease;
   }
 
   li > p {
-    font-size: 6rem;
-    padding-right: 30px;
+    font-size: 7rem;
+    padding-right: 20px;
     opacity: 0.2;
-    transition: 0.6s ease;
+    transition: 0.2s ease;
   }
 
-  li > p:hover{
+  li > p:hover {
     opacity: 0.4;
-    transition: 0.6s ease;
+    transition: 0.2s ease;
   }
 
   li > p.active {
     opacity: 1;
-    transition: 0.6s ease;
+    transition: 0.2s ease;
   }
 
   li > p.active:hover {
     opacity: 1;
-    transition: 0.6s ease;
+    transition: 0.2s ease;
   }
 
   li span p:first-child {
@@ -70,7 +130,6 @@ export const ScrollabeCalendar = styled.article`
   }
 
   li:hover {
-    /* filter: brightness(0.2); */
-    transition: 0.6s ease;
+    transition: 0.2s ease;
   }
 `;
