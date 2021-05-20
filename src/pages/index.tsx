@@ -2,12 +2,15 @@ import Head from 'next/head'
 
 export default function Home() {
   return (
-    <div>
+    <div className="main-content">
       <Head>
         <title>Note It</title>
       </Head>
 
-      <h1>Note.It</h1>
+      <div className="on-dev">
+        <h1>Em desenvolvimento..</h1>
+        <p>Aguarde logo mais estará disponível</p>
+      </div>
     </div>
   )
 }

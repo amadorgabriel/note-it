@@ -74,6 +74,9 @@ export const ScrollabeCalendar: any = styled.article`
 
 ScrollabeCalendar.DayList = styled.ul`
   overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  vertical-align: middle;
+
   height: 100vh;
   padding: 0 3rem 0 2rem;
 
@@ -82,6 +85,9 @@ ScrollabeCalendar.DayList = styled.ul`
   }
 
   li {
+    scroll-snap-align: start;
+    scroll-margin-top: -6px;
+
     display: flex;
     align-items: center;
     cursor: pointer;

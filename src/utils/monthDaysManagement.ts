@@ -1,6 +1,7 @@
 import lastDayOfMonth from "date-fns/lastDayOfMonth";
 import addMonths from "date-fns/addMonths";
 import subMonths from "date-fns/subMonths";
+import format from "date-fns/format"
 
 export function getAllDaysOfMonth(month?: Date) {
   if (!month) {
@@ -30,20 +31,22 @@ export function getAllDaysOfMonth(month?: Date) {
 function getDaysAndMonthArray(allDays, currentMonthNumber) {
   const lastDayOfCurrentMonth: number = parseInt(
     lastDayOfMonth(new Date()).toLocaleDateString().split("/")[0]
-  );
-
+    );
+    
   const lastDayOfPreviousMonth: number = parseInt(
     lastDayOfMonth(subMonths(new Date(), 1)).toLocaleDateString().split("/")[0]
   );
-
+  
   const lastDayOfNextMonth: number = parseInt(
     lastDayOfMonth(addMonths(new Date(), 1)).toLocaleDateString().split("/")[0]
-  );
+    );
+    const currentYear = new Date().getFullYear()
 
-  let newArray: [[any, number]] = [[null, null]];
+  let newArray: [[any, number, Date]] = [[null, null, null]];
+
 
   for (let i = 0; i < lastDayOfPreviousMonth; i++) {
-    newArray[i] = [allDays[i], currentMonthNumber - 1];
+    newArray[i] = [allDays[i], currentMonthNumber - 1, new Date(currentYear, currentMonthNumber - 1, allDays[i])];
   }
 
   for (
@@ -51,7 +54,7 @@ function getDaysAndMonthArray(allDays, currentMonthNumber) {
     i < lastDayOfPreviousMonth + lastDayOfCurrentMonth;
     i++
   ) {
-    newArray[i] = [allDays[i], currentMonthNumber];
+    newArray[i] = [allDays[i], currentMonthNumber, new Date(currentYear, currentMonthNumber, allDays[i])];
   }
 
   for (
@@ -59,8 +62,10 @@ function getDaysAndMonthArray(allDays, currentMonthNumber) {
     i < lastDayOfPreviousMonth + lastDayOfCurrentMonth + lastDayOfNextMonth;
     i++
   ) {
-    newArray[i] = [allDays[i], currentMonthNumber + 1];
+    newArray[i] = [allDays[i], currentMonthNumber + 1, new Date(currentYear, currentMonthNumber + 1, allDays[i])];
   }
+
+  console.log(newArray);
 
   return newArray;
 }
