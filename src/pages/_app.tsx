@@ -1,6 +1,6 @@
 import { ThemeProvider } from "styled-components";
 
-import { Calendar } from "../components/Calendar";
+import { Calendar } from "../components/Calendar/Index";
 import { darkTheme } from "../styles/themes/dark";
 import { lightTheme } from "../styles/themes/light";
 
