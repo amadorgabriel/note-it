@@ -10,7 +10,6 @@ export default createGlobalStyle`
   html,
   body{
     font-family: 'Lato', sans-serif;
-    /* font-family: 'Gelasio', serif; */
     background: ${props => props.theme.colors.background.primary};
     color: ${props => props.theme.colors.tipografy.text.primary}
   }
@@ -18,6 +17,10 @@ export default createGlobalStyle`
   a {
     text-decoration: none;
     font-family: 'Lato', sans-serif;
+  }
+
+  ul {
+    list-style-type: none;
   }
 
   ::selection { 
@@ -37,8 +40,14 @@ export default createGlobalStyle`
     }
   }
 
+  .main-container{
+    width: 100%;
+    height: 100vh;
+  }
+
   .main-content{
     width: 100%;
+    height: calc(100% - 160px);
 
     display: flex;
     justify-content: center;
@@ -55,6 +64,7 @@ export default createGlobalStyle`
     border-radius: 4px;
 
     padding: 2rem 3rem;
+    margin-bottom: 12rem;
 
     p{
       color: #646464;
