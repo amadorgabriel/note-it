@@ -18,14 +18,10 @@ export const Header = styled.header`
     font-family: "Gelasio", serif;
     font-size: 1.2rem;
     color: ${({theme}) => theme.colors.tipografy.title.primary};
+    align-items: start;
 
     h2{
       padding-left: 20px;
-    }
-
-    img{
-      margin-bottom: 5px;
-      
     }
   }
 

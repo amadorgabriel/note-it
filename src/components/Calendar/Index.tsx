@@ -50,7 +50,7 @@ export const Calendar = () => {
                 {numberDay}
               </p>
               <span className={currentDayIndex == index ? "" : "hiddenN"}>
-                <p>{format(allDates[index], 'MMM')}, {format(allDates[index], 'MM')}</p>
+                <p>{format(allDates[index], 'MMMM')}</p>
                 <p>{format(allDates[index], 'EEEE')}</p>
               </span>
             </li>
