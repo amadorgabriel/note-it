@@ -1,8 +1,11 @@
-import { Input } from './styles'
+import { InputStyled } from './styles'
 
+interface InputProps {
+  placeholder: string
+}
 
-export const MyInput = () => {
+export const Input = ({...rest}) => {
   return (
-    <Input placeholder="Insira uma nova task" /> 
+    <InputStyled {...rest} /> 
   )
 }
