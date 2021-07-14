@@ -1,88 +1,27 @@
 import styled from "styled-components";
 
-export const ScrollabeCalendar: any = styled.article`
-  background: ${props => props.theme.colors.background.secondary};
-
-  width: 34.5rem;
+export const ScrollabeCalendar: any = styled.div`
+  height: 100vh;
+  width: 550px; //34.5rem
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  .pointer-container {
-    width: 85px;
-    height: 100%;
-  }
-
-  .pointer {
-    content: "";
-    width: 85px;
-    height: 2px;
-    padding-top: 2px;
-    margin-top: calc((100vh / 29) * 4);
-
-    display: block;    
-    background-color: #AC3936;
-    background-color: ${({theme}) => theme.colors.primary};
-    opacity: 0.4;
-  }
-
-  .pointer:first-child {
-    margin-top: calc((100vh / 29) * 1.8);
-  }
-
-  .pointer::before {
-    content: "";
-    width: 30px;
-    height: 2px;
-    margin-top: calc(100vh / -29); // -13px
-
-    display: block;    
-    background-color: ${({theme}) => theme.colors.primary};
-  }
-
-  .pointer span {
-    content: "";
-    width: 30px;
-    height: 2px;
-    margin-top: calc(190vh / 29); // 20px
-
-    display: block;    
-    background-color: ${({theme}) => theme.colors.primary};
-  }
-
-  .pointer::after {
-    content: "";
-    width: 30px;
-    height: 2px;
-    margin-top: calc(100vh / 29); // 10px
-
-    display: block;    
-    background-color: ${({theme}) => theme.colors.primary};
-  }
-
-  .principal{
-    background-color: #AC3936;
-    opacity: 1;
-  }
-
-  .principal::before, .principal span, .principal::after {
-    opacity: 0.4;
-  }
-
-`;
-
-ScrollabeCalendar.DayList = styled.ul`
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   vertical-align: middle;
+  scroll-behavior: smooth;
 
-  height: 100vh;
-  padding: 0 3rem 0 2rem;
+  background: ${props => props.theme.colors.background.secondary};
 
   &::-webkit-scrollbar {
     display: none;
   }
+`;
+
+ScrollabeCalendar.DayList = styled.ul`
+  height: 100%;
 
   li {
     scroll-snap-align: start;
@@ -90,9 +29,46 @@ ScrollabeCalendar.DayList = styled.ul`
 
     display: flex;
     align-items: center;
-    cursor: pointer;
-
     list-style: none;
+  }
+
+  .pointer {
+    width: 85px;
+    height: 100%;
+    margin-right: 1.8rem;
+
+    display: block;
+  }
+
+  .pointer > span {
+    display: block;
+
+    content: "";
+    width: 30px;
+    height: 2px;
+    margin-top: 20px;
+
+    opacity: 0.4;
+    background-color: ${({ theme }) => theme.colors.primary};
+  }
+
+  .principal {
+    width: 85px !important;
+    height: 100%;
+
+    display: block;
+    background-color: white;
+  }
+
+  .pointer .active {
+    background-color: #ac3936;
+    opacity: 1;
+  }
+
+  .day-info {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
     text-transform: uppercase;
     font-weight: bold;
 
@@ -100,33 +76,33 @@ ScrollabeCalendar.DayList = styled.ul`
     transition: 0.2s ease;
   }
 
-  li > p {
+  .day-info > p {
     font-size: 7rem;
     padding-right: 20px;
     opacity: 0.2;
     transition: 0.2s ease;
   }
 
-  li > p:hover {
+  .day-info > p:hover {
     opacity: 0.4;
     transition: 0.2s ease;
   }
 
-  li > p.active {
+  .day-info > p.active {
     opacity: 1;
     transition: 0.2s ease;
   }
 
-  li > p.active:hover {
+  .day-info > p.active:hover {
     opacity: 1;
     transition: 0.2s ease;
   }
 
-  li span{
+  .day-info span {
     min-width: 113px;
   }
 
-  li span p:first-child {
+  .day-info span p:first-child {
     font-size: 1.75rem;
     font-weight: normal;
     opacity: 0.7;
@@ -134,12 +110,31 @@ ScrollabeCalendar.DayList = styled.ul`
     padding-bottom: 1px;
   }
 
-  li span p:last-child {
+  .day-info span p:last-child {
     font-size: 1.25rem;
     opacity: 0.4;
   }
 
-  li:hover {
+  .day-info:hover {
     transition: 0.2s ease;
   }
+`;
+
+export const ScrollTopButton = styled.button`
+  position: fixed;
+  left: 360px;
+  bottom: 20px;
+
+  cursor: pointer;
+
+  border-radius: 5px;
+  padding: 15px;
+  
+  border: 0;
+  
+  &:hover {
+    background-color: whitesmoke;
+
+  }
+
 `;

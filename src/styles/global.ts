@@ -7,6 +7,10 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   html,
   body{
     font-family: 'Lato', sans-serif;
@@ -47,30 +51,15 @@ export default createGlobalStyle`
 
   .main-content{
     width: 100%;
-    height: calc(100% - 160px);
+    height: calc(100% - 120px);
 
-    display: flex;
+    padding: 0 0 0 6rem;
+
+    /* background-color: orange; */
+
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-  }
-
-  .on-dev{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    border: 3px solid ${props => props.theme.colors.tipografy.text.primary};
-    border-style: dashed;
-    border-radius: 4px;
-
-    padding: 2rem 3rem;
-    margin-bottom: 12rem;
-
-    p{
-      color: #646464;
-     font-size: 1.25rem;
-     font-weight: bold;
-    }
+    align-items: center; */
   }
 
   /* ------- UTILS ------- */

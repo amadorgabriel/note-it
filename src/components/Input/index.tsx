@@ -6,6 +6,11 @@ interface InputProps {
 
 export const Input = ({...rest}) => {
   return (
-    <InputStyled {...rest} /> 
+    <InputStyled>
+      <InputStyled.Input {...rest} /> 
+      <button type="submit">
+        <img src="/icons/locationArrow.svg" alt="Location Arrow Icon" />
+      </button>
+    </InputStyled>
   )
 }

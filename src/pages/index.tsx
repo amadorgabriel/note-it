@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Header from "../components/Header/Index";
+import Header from "../components/Header/index";
 import { Input } from "../components/Input/index"
 
 export default function Home() {
@@ -12,11 +12,6 @@ export default function Home() {
       <Header />
 
       <div className="main-content">
-        {/* <div className="on-dev">
-          <h1>Em desenvolvimento..</h1>
-          <p>Aguarde logo mais estará disponível</p>
-        </div> */}
-
         <Input placeholder="What is your focus today?" />
       </div>
     </div>
