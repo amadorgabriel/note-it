@@ -27,8 +27,8 @@ export default createGlobalStyle`
     list-style-type: none;
   }
 
-  ::selection { 
-    background: ${props => props.theme.colors.tipografy.title.primary}; 
+  ::selection {
+    background: ${props => props.theme.colors.tipografy.title.primary};
     color: #FFF;
   }
 
@@ -54,16 +54,10 @@ export default createGlobalStyle`
     height: calc(100% - 120px);
 
     padding: 0 0 0 6rem;
-
-    /* background-color: orange; */
-
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
   }
 
   /* ------- UTILS ------- */
-  
+
   .flex{
     display: flex
   }

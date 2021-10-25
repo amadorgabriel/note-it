@@ -2,18 +2,18 @@ import Head from "next/head";
 import Header from "../components/Header/index";
 import { Input } from "../components/Input/index"
 
-export default function Home() {
+export default function Placeholder() {
   return (
-    <div className="main-container">
+    <>
       <Head>
-        <title>Note It</title>
+        <title>Test Components</title>s
       </Head>
 
-      <Header />
+
 
       <div className="main-content">
-        <Input placeholder="What is your focus today?" />
+        <p>Em breve</p>
       </div>
-    </div>
+    </>
   );
 }
